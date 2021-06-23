@@ -35,8 +35,6 @@
     <p>&copy; <?php echo date("Y"); ?> Acme.</p>
   </footer>
 
-  @if(Request::is('contact'))
-    @include('inc.focus')
-  @endif
+  <script src="{{ asset('public/js/app.js') }}"></script>
 </body>
 </html>

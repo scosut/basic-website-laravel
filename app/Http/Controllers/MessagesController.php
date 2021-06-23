@@ -15,7 +15,7 @@ class MessagesController extends Controller
     public function submit(Request $request) {
       $validator = Validator::make($request->all(), [
         'name'    => 'required',
-        'email'   => 'required',
+        'email'   => 'required|email',
         'message' => 'required'
       ]);
 
@@ -30,6 +30,6 @@ class MessagesController extends Controller
       $message->message = $request->input('message');
       $message->save();
 
-      return redirect('/')->with('success', 'Message sent.');
+      return redirect('/contact')->with('success', 'Message sent.');
     }
 }
